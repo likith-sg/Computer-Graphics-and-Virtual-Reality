@@ -20,6 +20,7 @@ This repository contains the complete laboratory curriculum for the **Computer G
 - [Experiment 8: OpenGL Vertex and Fragment Shaders](#experiment-8-opengl-vertex-and-fragment-shaders)
 - [Experiment 9: Simple Interactive 3D Scene](#experiment-9-simple-interactive-3d-scene)
 - [Experiment 10: 3D Viewing Pipeline, Projection, and Viewport Mapping](#experiment-10-3d-viewing-pipeline-projection-and-viewport-mapping)
+- [Case Study 2: VR Collaborative Automotive Design (Industrial Design & Architecture)](#case-study-2-vr-collaborative-automotive-design)
 - [Installation and Setup](#installation-and-setup)
 - [Execution Commands](#execution-commands)
 - [Repository Structure](#repository-structure)
@@ -390,13 +391,19 @@ Features an interactive arena, player avatar with steering and jumping, rotating
 
 ### 6. Visual Result
 
-#### Static Frame Screenshot
-<img src="experiments/Experiment_9/output.png" alt="Experiment 9 - Simple Interactive 3D Scene" width="700">
+#### Python OpenGL Output
+<img src="experiments/Experiment_9/output.png" alt="Experiment 9 - Python OpenGL Output" width="700">
 
-#### Live Gameplay Demo (GIF)
-<img src="experiments/Experiment_9/demo.gif" alt="Experiment 9 Gameplay Demo" width="600">
+#### Python Interactive Demo (GIF)
+<img src="experiments/Experiment_9/demo.gif" alt="Experiment 9 - Python Interactive Demo" width="600">
 
-*Live animation: Third-person player navigation, gravity jump, gem rotation, and proximity collection.*
+#### Unity 3D Interactive Scene (Unity 6 / 2022.3 LTS)
+<img src="experiments/Experiment_9/output_unity.png" alt="Experiment 9 - Unity 3D Interactive Scene Static" width="700">
+
+#### Unity 3D Gameplay & Physics Demo (GIF)
+<img src="experiments/Experiment_9/LAB9.gif" alt="Experiment 9 - Unity 3D Gameplay Demo" width="600">
+
+*Demonstrates third-person player locomotion, Euler jump kinematics, rotating diamond gems, trigger pickups, and real-time telemetry HUD across both Python and Unity 3D engines.*
 
 ### 7. Execution Command
 ```bash
@@ -436,18 +443,49 @@ Features dual viewports with synchronized animated rotation of a multi-colored 3
 
 ### 6. Visual Result
 
-#### Static Frame Screenshot
-<img src="experiments/Experiment_10/output.png" alt="Experiment 10 - 3D Viewing Pipeline" width="700">
+#### Python OpenGL Output (Dual Viewports)
+<img src="experiments/Experiment_10/output.png" alt="Experiment 10 - Python Dual Viewports" width="700">
 
-#### Live Rotation Animation (GIF)
-<img src="experiments/Experiment_10/demo.gif" alt="Experiment 10 Animation" width="600">
+#### Python Interactive Demo (GIF)
+<img src="experiments/Experiment_10/demo.gif" alt="Experiment 10 - Python Animation" width="600">
 
-*Live animation: Synchronized dual-viewport 3D cube rotation demonstrating Orthographic vs. Perspective projection.*
+#### Unity 3D Synchronized Dual Projection Pipeline
+<img src="experiments/Experiment_10/output_unity.png" alt="Experiment 10 - Unity Dual Viewport Projection" width="700">
+
+#### Unity 3D Synchronized Viewing Pipeline Demo (GIF)
+<img src="experiments/Experiment_10/LAB10.gif" alt="Experiment 10 - Unity Viewing Pipeline Demo" width="600">
+
+*Demonstrates the 3D viewing transformation pipeline comparing CAD-style parallel orthographic projection against depth-foreshortened perspective projection across both Python OpenGL and Unity 3D engines.*
 
 ### 7. Execution Command
 ```bash
 python experiments/Experiment_10/exp10.py
 ```
+
+---
+
+## Case Study 2: VR Collaborative Automotive Design
+
+**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Unity Project:** [`Case Study/unity_project/`](Case Study/unity_project/)
+
+### Scenario: Industrial Design & Architecture
+An automotive manufacturer deploys a collaborative VR environment allowing design teams in **Bengaluru** and **Detroit** to view, manipulate, and validate 1:1 scale car prototypes concurrently without expensive physical clay models.
+
+### Key Deliverables & Theory:
+1. **Geometric Modelling:** B-Rep vs. CSG, NURBS surface formulations, and adaptive Delaunay tessellation for Class-A aerodynamic curvature continuity.
+2. **Matrix Transformations:** Derivation and computation of the composite transformation matrix $\mathbf{M} = \mathbf{T}(50\text{ mm}) \cdot \mathbf{R}_z(45^\circ) \cdot \mathbf{S}(1.5)$ in homogeneous coordinates using the column-vector convention.
+3. **VR Optimization & Clipping:** 4D Sutherland-Hodgman homogeneous frustum clipping, tri-level Hidden Surface Removal (Back-face culling, BVH occlusion queries, and Hi-Z Early-Z depth testing), Single-Pass Instanced Stereo rendering, and Variable Rate Shading (VRS) to maintain $90\text{ FPS}$ with $<20\text{ ms}$ motion-to-photon latency.
+4. **Unity 6 Implementation:** Interactive 1:1 scale prototype review studio featuring real-time wheel rim transformation inspector, exploded assembly mode (`E`), metallic Class-A paint finish customizer (`C`), distributed collaborative avatars, and live VR optimization telemetry.
+
+### Visual Result
+
+#### Unity 6 Interactive Forza Customization Studio (Static View)
+<img src="Case Study/output.png" alt="Case Study 2 - 1:1 Scale Automotive Customization Studio" width="700">
+
+#### Unity 6 Interactive Design Review Demo (GIF)
+<img src="Case Study/demo.gif" alt="Case Study 2 - Interactive Customization Demo" width="650">
+
+*Showcases the 1:1 scale automotive design studio in Unity 6: 5 selectable vehicle models with PI ratings, modular wheel and body aero customization, interactive Q2 homogeneous transformation inspector, and real-time dual-eye VR telemetry.*
 
 ---
 
@@ -586,6 +624,17 @@ Computer-Graphics-and-Virtual-Reality/
 │       ├── output.png
 │       ├── demo.gif
 │       └── README.md
+│
+├── Case Study/
+│   ├── README.md
+│   ├── verify_matrix.py
+│   └── unity_project/
+│       ├── Assets/
+│       │   ├── Scripts/
+│       │   ├── Editor/
+│       │   └── Scenes/
+│       ├── Packages/
+│       └── ProjectSettings/
 │
 ├── assets/
 │   ├── screenshots/
