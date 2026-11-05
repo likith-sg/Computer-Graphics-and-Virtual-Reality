@@ -460,10 +460,10 @@ public class AutoVerseShowroomUI : MonoBehaviour
         brandHlg.childForceExpandWidth = false;
         brandHlg.childForceExpandHeight = true;
 
-        Text brandText = CreateDirectText(brandBadge.transform, "AUTOVERSE", 16, FontStyle.Bold, colAccentCyan);
+        Text brandText = CreateDirectText(brandBadge.transform, "RVU AUTOVERSE", 15, FontStyle.Bold, colAccentCyan);
         brandText.alignment = TextAnchor.MiddleLeft;
 
-        Text subText = CreateDirectText(brandBadge.transform, "ATELIER", 11, FontStyle.Normal, colTextMuted);
+        Text subText = CreateDirectText(brandBadge.transform, "CAD VR (BLR-DET)", 10, FontStyle.Normal, colAccentGold);
         subText.alignment = TextAnchor.MiddleLeft;
 
         // Spacer to push selector to center

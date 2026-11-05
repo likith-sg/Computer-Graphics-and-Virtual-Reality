@@ -86,28 +86,28 @@ NEON_COLORS = [
 
 STUDIO_LIGHTING = [
     {
-        "name": "Luxury Studio",
+        "name": "Bengaluru Studio",
         "key_col": (1.00, 0.94, 0.85), "key_pos": (6.0, 7.5, 6.0),
         "fill_col": (0.35, 0.40, 0.55), "fill_pos": (-6.0, 5.0, -5.0),
         "ambient": (0.16, 0.17, 0.20),
         "accent": (1.00, 0.85, 0.60)
     },
     {
-        "name": "Midnight Studio",
+        "name": "Detroit Proving Grounds",
         "key_col": (0.40, 0.80, 1.00), "key_pos": (6.0, 7.5, 6.0),
         "fill_col": (0.20, 0.25, 0.45), "fill_pos": (-6.0, 5.0, -5.0),
         "ambient": (0.08, 0.10, 0.16),
         "accent": (0.00, 0.90, 1.00)
     },
     {
-        "name": "Bright Gallery",
+        "name": "CAD Inspection Pavilion",
         "key_col": (1.00, 1.00, 1.00), "key_pos": (5.0, 8.5, 5.0),
         "fill_col": (0.60, 0.62, 0.68), "fill_pos": (-5.0, 6.0, -5.0),
         "ambient": (0.25, 0.26, 0.28),
         "accent": (0.90, 0.90, 0.95)
     },
     {
-        "name": "Neon Garage",
+        "name": "Cyberpunk Prototyping Bay",
         "key_col": (1.00, 0.10, 0.65), "key_pos": (6.0, 6.5, 5.0),
         "fill_col": (0.00, 0.85, 1.00), "fill_pos": (-6.0, 5.0, -5.0),
         "ambient": (0.10, 0.08, 0.15),

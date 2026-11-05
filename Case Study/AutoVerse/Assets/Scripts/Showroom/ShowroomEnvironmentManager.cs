@@ -303,7 +303,7 @@ public class ShowroomEnvironmentManager : MonoBehaviour
         logoRoot.transform.SetParent(parent, false);
         logoRoot.transform.position = centerPos;
 
-        CreateWallDetail(logoRoot.transform, "Brand_Plaque", Vector3.zero, new Vector3(9.5f, 1.7f, 0.12f), revealMat);
+        CreateWallDetail(logoRoot.transform, "Brand_Plaque", Vector3.zero, new Vector3(11.8f, 1.8f, 0.12f), revealMat);
         var lettering = new GameObject("AUTOVERSE_Lettering", typeof(TextMesh));
         lettering.transform.SetParent(logoRoot.transform, false);
         lettering.transform.localPosition = new Vector3(0, 0.14f, -0.08f);
@@ -311,7 +311,7 @@ public class ShowroomEnvironmentManager : MonoBehaviour
         TextMesh text = lettering.GetComponent<TextMesh>();
         text.font = brandFont;
         if (brandFont != null) lettering.GetComponent<MeshRenderer>().sharedMaterial = brandFont.material;
-        text.text = "A U T O V E R S E";
+        text.text = "R V U   A U T O V E R S E";
         text.anchor = TextAnchor.MiddleCenter;
         text.alignment = TextAlignment.Center;
         text.fontSize = 96;
@@ -323,7 +323,7 @@ public class ShowroomEnvironmentManager : MonoBehaviour
         TextMesh subText = subtitle.GetComponent<TextMesh>();
         subText.font = brandFont;
         if (brandFont != null) subtitle.GetComponent<MeshRenderer>().sharedMaterial = brandFont.material;
-        subText.text = "THE AUTOMOTIVE ATELIER";
+        subText.text = "COLLABORATIVE VR CAD STUDIO | BENGALURU - DETROIT";
         subText.anchor = TextAnchor.MiddleCenter;
         subText.fontSize = 64;
         subText.characterSize = 0.045f;

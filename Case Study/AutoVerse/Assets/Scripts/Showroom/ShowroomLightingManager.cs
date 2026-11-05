@@ -51,10 +51,10 @@ public class ShowroomLightingManager : MonoBehaviour
         {
             switch (currentStyle)
             {
-                case LightingStyle.LuxuryStudio: return "Luxury Studio";
-                case LightingStyle.MidnightStudio: return "Midnight Studio";
-                case LightingStyle.BrightGallery: return "Bright Gallery";
-                case LightingStyle.NeonGarage: return "Neon Garage";
+                case LightingStyle.LuxuryStudio: return "Bengaluru Studio";
+                case LightingStyle.MidnightStudio: return "Detroit Proving Grounds";
+                case LightingStyle.BrightGallery: return "CAD Inspection Pavilion";
+                case LightingStyle.NeonGarage: return "Cyberpunk Prototyping Bay";
                 default: return "Studio";
             }
         }
