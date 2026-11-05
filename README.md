@@ -20,7 +20,7 @@ This repository contains the complete laboratory curriculum for the **Computer G
 - [Experiment 8: OpenGL Vertex and Fragment Shaders](#experiment-8-opengl-vertex-and-fragment-shaders)
 - [Experiment 9: Simple Interactive 3D Scene](#experiment-9-simple-interactive-3d-scene)
 - [Experiment 10: 3D Viewing Pipeline, Projection, and Viewport Mapping](#experiment-10-3d-viewing-pipeline-projection-and-viewport-mapping)
-- [Case Study 2: VR Collaborative Automotive Design (Industrial Design & Architecture)](#case-study-2-vr-collaborative-automotive-design)
+- [Case Study 3: Retail and Remote Commerce (WebXR AR/VR Furniture Design)](#case-study-3-retail-and-remote-commerce)
 - [Installation and Setup](#installation-and-setup)
 - [Execution Commands](#execution-commands)
 - [Repository Structure](#repository-structure)
@@ -397,13 +397,7 @@ Features an interactive arena, player avatar with steering and jumping, rotating
 #### Python Interactive Demo (GIF)
 <img src="experiments/Experiment_9/demo.gif" alt="Experiment 9 - Python Interactive Demo" width="600">
 
-#### Unity 3D Interactive Scene (Unity 6 / 2022.3 LTS)
-<img src="experiments/Experiment_9/output_unity.png" alt="Experiment 9 - Unity 3D Interactive Scene Static" width="700">
-
-#### Unity 3D Gameplay & Physics Demo (GIF)
-<img src="experiments/Experiment_9/LAB9.gif" alt="Experiment 9 - Unity 3D Gameplay Demo" width="600">
-
-*Demonstrates third-person player locomotion, Euler jump kinematics, rotating diamond gems, trigger pickups, and real-time telemetry HUD across both Python and Unity 3D engines.*
+*Demonstrates third-person camera tracking, Euler jump physics, rotating obstacle cubes, diamond collectibles, and real-time Heads-Up Display (HUD) telemetry.*
 
 ### 7. Execution Command
 ```bash
@@ -449,13 +443,7 @@ Features dual viewports with synchronized animated rotation of a multi-colored 3
 #### Python Interactive Demo (GIF)
 <img src="experiments/Experiment_10/demo.gif" alt="Experiment 10 - Python Animation" width="600">
 
-#### Unity 3D Synchronized Dual Projection Pipeline
-<img src="experiments/Experiment_10/output_unity.png" alt="Experiment 10 - Unity Dual Viewport Projection" width="700">
-
-#### Unity 3D Synchronized Viewing Pipeline Demo (GIF)
-<img src="experiments/Experiment_10/LAB10.gif" alt="Experiment 10 - Unity Viewing Pipeline Demo" width="600">
-
-*Demonstrates the 3D viewing transformation pipeline comparing CAD-style parallel orthographic projection against depth-foreshortened perspective projection across both Python OpenGL and Unity 3D engines.*
+*Demonstrates the complete 3D viewing transformation pipeline comparing CAD-style parallel orthographic projection against depth-foreshortened perspective projection with synchronized real-time cube rotation.*
 
 ### 7. Execution Command
 ```bash
@@ -464,28 +452,50 @@ python experiments/Experiment_10/exp10.py
 
 ---
 
-## Case Study 2: VR Collaborative Automotive Design
+## Case Study 2: Automotive Design & Manufacturing — AutoVerse 3D Showroom
 
-**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Unity Project:** [`Case Study/unity_project/`](Case Study/unity_project/)
+**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Interactive Program:** [`Case Study/autoverse.py`](Case%20Study/autoverse.py) &bull; **Unity Project:** [`Case Study/AutoVerse/`](Case Study/AutoVerse/) &bull; **Live WebGL:** [auto-verse-plum.vercel.app](https://auto-verse-plum.vercel.app/)
 
-### Scenario: Industrial Design & Architecture
-An automotive manufacturer deploys a collaborative VR environment allowing design teams in **Bengaluru** and **Detroit** to view, manipulate, and validate 1:1 scale car prototypes concurrently without expensive physical clay models.
+### Scenario: Automotive Design and Manufacturing
+An automotive company develops a collaborative real-time 3D Virtual Reality showroom and vehicle customizer to review new vehicle models with engineering and design teams located across the world (e.g., Bengaluru to Detroit sync).
 
-### Key Deliverables & Theory:
-1. **Geometric Modelling:** B-Rep vs. CSG, NURBS surface formulations, and adaptive Delaunay tessellation for Class-A aerodynamic curvature continuity.
-2. **Matrix Transformations:** Derivation and computation of the composite transformation matrix $\mathbf{M} = \mathbf{T}(50\text{ mm}) \cdot \mathbf{R}_z(45^\circ) \cdot \mathbf{S}(1.5)$ in homogeneous coordinates using the column-vector convention.
-3. **VR Optimization & Clipping:** 4D Sutherland-Hodgman homogeneous frustum clipping, tri-level Hidden Surface Removal (Back-face culling, BVH occlusion queries, and Hi-Z Early-Z depth testing), Single-Pass Instanced Stereo rendering, and Variable Rate Shading (VRS) to maintain $90\text{ FPS}$ with $<20\text{ ms}$ motion-to-photon latency.
-4. **Unity 6 Implementation:** Interactive 1:1 scale prototype review studio featuring real-time wheel rim transformation inspector, exploded assembly mode (`E`), metallic Class-A paint finish customizer (`C`), distributed collaborative avatars, and live VR optimization telemetry.
+### Key Features & Technical Deliverables:
+1. **8 Interactive Vehicle Models:**
+   - Real-time switching between `Sports Coupe`, `Executive Sedan`, `Compact Hatch`, `Urban SUV`, `GT Formula Racer`, `Police Interceptor`, `City Taxi`, and `Luxury Golf Cart`.
+2. **Deep Multi-Layer Customization Suite:**
+   - **18 Automotive Colors**: Pearl White, Midnight Black, Graphite, Arctic Silver, Racing Red, Crimson, Sunset Orange, Solar Yellow, Royal Blue, Sky Blue, Emerald Green, Forest Green, Violet, Rose Gold, Champagne, Bronze, Teal, Candy Pink.
+   - **4 Surface Finishes**: Gloss (high smoothness $0.90$, sharp specular), Metallic (high metallic $0.90$, micro-roughness $0.85$), Matte (diffuse absorption, zero metallic), and Satin (velvety semi-specular $0.50$).
+   - **5 Alloy Finishes & 5 Brembo Calipers**: Stealth Black, Polished Silver, Gunmetal, Liquid Gold, Burnt Bronze, and Racing Red calipers.
+   - **6 Window Tints & 5 Headlight Styles**: Clear Glass ($35\%$), Light Smoke ($55\%$), Dark Charcoal ($82\%$), Limo Blackout ($96\%$), Sunset Gold Chameleon, Cyber Blue Mirror, and Xenon/LED headlights.
+   - **6 Underglow Neon Colors**: Electric Cyan, Neon Magenta, Acid Green, Amber Gold, Ice White, Royal Violet with real-time ground reflection.
+   - **Procedural Bounds-Fitted Accessories**: Roof light bars, aerodynamic downforce rear wings, dual racing stripes, and underglow tubes.
+3. **360° Architectural Luxury Showroom:**
+   - Seamless polished obsidian reflective floor, illuminated turntable with dual ambient LED halo rings, acoustic presentation wall with backlit 3D **AUTOVERSE** emblem, vertical light columns, and overhead studio softbox canopy.
+   - **4 Studio Lighting Presets**: Luxury Studio (warm champagne & tungsten), Midnight Studio (ice blue & cyan rim), Bright Gallery (pure daylight white), and Neon Garage (cyberpunk magenta & electric cyan).
+4. **Touch & Orbit Camera Interaction:**
+   - 360° mouse drag orbit, pinch-to-zoom, auto-spin turntable (15°/s), and complete interaction isolation preventing camera jumps while interacting with UI.
+5. **Automotive Engineering Formulations:**
+   - $4 \times 4$ Homogeneous Transformation Matrices for multi-location CAD sync and exploded assembly views.
+   - Cook-Torrance microfacet BRDF with GGX normal distribution and Schlick-Fresnel grazing clearcoat reflection.
+   - Strict $< 11.1\,\text{ms}$ ($90\,\text{Hz}$) VR frame budget and Single-Pass Instanced (SPI) viewport optimization.
+
+### Execution Command
+Run the standalone interactive 3D AutoVerse studio viewer:
+```bash
+python "Case Study/autoverse.py"
+```
+
+To run in Unity 6 Editor, open `Case Study/AutoVerse` (or `Case Study/unity_project`) and load `Assets/Scenes/AutoVerse_Showwroom.unity`.
 
 ### Visual Result
 
-#### Unity 6 Interactive Forza Customization Studio (Static View)
-<img src="Case Study/output.png" alt="Case Study 2 - 1:1 Scale Automotive Customization Studio" width="700">
+#### AutoVerse 3D Showroom (Hero Static View)
+<img src="Case Study/output.png" alt="AutoVerse 3D Showroom Hero Static View" width="700">
 
-#### Unity 6 Interactive Design Review Demo (GIF)
-<img src="Case Study/demo.gif" alt="Case Study 2 - Interactive Customization Demo" width="650">
+#### Interactive 3D AutoVerse Turntable Demo (GIF)
+<img src="Case Study/demo.gif" alt="AutoVerse Interactive 3D Turntable Demo" width="650">
 
-*Showcases the 1:1 scale automotive design studio in Unity 6: 5 selectable vehicle models with PI ratings, modular wheel and body aero customization, interactive Q2 homogeneous transformation inspector, and real-time dual-eye VR telemetry.*
+*Demonstrates the 3D automotive showroom: Sports Coupe in metallic Racing Red on the illuminated halo turntable with polished obsidian reflections, studio lighting presets, and 360° camera orbit.*
 
 ---
 
@@ -627,7 +637,7 @@ Computer-Graphics-and-Virtual-Reality/
 │
 ├── Case Study/
 │   ├── README.md
-│   ├── verify_matrix.py
+│   ├── verify_viewport.py
 │   └── unity_project/
 │       ├── Assets/
 │       │   ├── Scripts/

@@ -1,9 +1,0 @@
-{
-  "MonoBehaviour": {
-    "EnableBurstCompilation": false,
-    "EnableOptimisations": false,
-    "EnableSafetyChecks": false,
-    "EnableArmv9SecurityFeatures": false
-  }
-}
-

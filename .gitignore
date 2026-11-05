@@ -46,6 +46,8 @@ Thumbs.db
 **/[Uu]ser[Ss]ettings/
 **/[Mm]emoryCaptures/
 **/[Rr]ecordings/
+*.log
+frames/
 
 # Unity generated projects
 *.csproj
@@ -67,4 +69,5 @@ Thumbs.db
 *.lock
 sysinfo.txt
 CrashReports/
+**/_Recovery/
 
