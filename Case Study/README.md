@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="rvu_logo.png" alt="RV University Logo" width="300" />
+</p>
+
 # CS4104 – COMPUTER GRAPHICS AND VIRTUAL REALITY
 # PROJECT / CASE STUDY REPORT
 
@@ -5,7 +9,7 @@
 
 ## TITLE OF THE SELECTED CASE STUDY:
 ### **CASE STUDY 2: INDUSTRIAL DESIGN AND ARCHITECTURE**
-#### *Collaborative 1:1 Scale Virtual Reality Automotive Design & Prototyping Environment (AutoVerse VR — Bengaluru & Detroit Engineering Review)*
+#### *Collaborative 1:1 Scale Virtual Reality Automotive Design & Prototyping Environment (AutoVR — Bengaluru & Detroit Engineering Review)*
 
 ---
 
@@ -37,7 +41,7 @@ This is to certify that the CS4104 – Computer Graphics and Virtual Reality cas
 report titled:
 
    "INDUSTRIAL DESIGN AND ARCHITECTURE: COLLABORATIVE 1:1 SCALE VIRTUAL REALITY
-    AUTOMOTIVE DESIGN & PROTOTYPING SYSTEM (AUTOVERSE VR)"
+    AUTOMOTIVE DESIGN & PROTOTYPING SYSTEM (AUTOVR)"
 
 has been prepared and submitted by LIKITH S G (USN: 1RVU23CSE236) of the School of
 Computer Science and Engineering, RV University, Bengaluru, during the academic year
@@ -54,7 +58,7 @@ RV University, Bengaluru
 ---
 
 ## Abstract
-Traditional automotive product development relies heavily on physical clay milling, full-scale wooden bucks, and manual paint surfacing—processes requiring months of fabrication and expenditure exceeding \$300,000 to \$500,000 per full-scale design iteration. This report investigates the mathematical and architectural design of **AutoVerse VR**, an enterprise-grade collaborative Virtual Reality environment developed in Unity 6 (`6000.6.7f1`) with URP and an accompanying standalone Python 3D OpenGL CAD viewer. The system enables distributed design teams situated in Bengaluru, India, and Detroit, Michigan, to manipulate, evaluate, and synchronize 1:1 scale photorealistic digital vehicle prototypes in real time across 13,000 kilometers without physical manufacturing.
+Traditional automotive product development relies heavily on physical clay milling, full-scale wooden bucks, and manual paint surfacing—processes requiring months of fabrication and expenditure exceeding \$300,000 to \$500,000 per full-scale design iteration. This report investigates the mathematical and architectural design of **AutoVR**, an enterprise-grade collaborative Virtual Reality environment developed in Unity 6 (`6000.6.7f1`) with URP and an accompanying standalone Python 3D OpenGL CAD viewer. The system enables distributed design teams situated in Bengaluru, India, and Detroit, Michigan, to manipulate, evaluate, and synchronize 1:1 scale photorealistic digital vehicle prototypes in real time across 13,000 kilometers without physical manufacturing.
 
 This investigation answers all core assignment questions through rigorous theoretical and mathematical analysis: (1) We detail the mathematical pipeline converting 2D orthographic technical blueprints into watertight 3D solid geometry using Boundary Representation (B-Rep) topological graphs and Constructive Solid Geometry (CSG) Boolean trees; (2) We formulate and calculate the exact step-by-step composite transformation matrix in homogeneous coordinates for a car wheel rim scaled by 1.5, rotated by $45^\circ$, and translated forward by $50\,\text{mm}$, proving the noncommutative column-vector matrix pipeline; and (3) We evaluate polygon clipping (Sutherland-Hodgman in homogeneous clip space) and hidden-surface removal algorithms (Hierarchical Z-Buffering, Early-Z Depth Prepass, and Single-Pass Instanced Stereo) necessary to maintain a deterministic $90\,\text{FPS}$ ($11.11\,\text{ms}$) VR frame budget across dual high-density displays. The resulting application demonstrates 8 interactive vehicle topologies, an 18-color paint atelier across 4 physical finishes, and dual-site CAD telemetry.
 
@@ -137,7 +141,7 @@ However, physical prototyping suffers from severe structural bottlenecks:
 +----------------------------------------------------------------------------------------------------+
                                                   VS
 +----------------------------------------------------------------------------------------------------+
-|                      AUTOVERSE VR COLLABORATIVE DIGITAL PIPELINE (HOURS / DAYS)                    |
+|                      AUTOVR COLLABORATIVE DIGITAL PIPELINE (HOURS / DAYS)                    |
 |  2D CAD Blueprint -> B-Rep / CSG Tessellation -> URP VR Headset Review (Bengaluru <-> Detroit Sync)|
 +----------------------------------------------------------------------------------------------------+
 ```
@@ -146,7 +150,7 @@ However, physical prototyping suffers from severe structural bottlenecks:
 The advent of real-time stereoscopic computer graphics, high-density head-mounted displays (HMDs, such as Meta Quest Pro, HTC Vive Focus 3, and Apple Vision Pro), and physically based rendering (PBR) pipelines has enabled **virtual clay prototyping**. In an immersive VR studio, design teams can view full-scale vehicles with millimeter precision, assess reflection curvature lines (zebra striping), simulate direct sunlit illumination at varying times of day, and test alternative wheel/trim packages instantaneously.
 
 ### 1.3 Scope and Structure of the Report
-This report presents the complete academic and engineering specification for **AutoVerse VR**, an industrial automotive design showroom developed for **CS4104 (Computer Graphics & Virtual Reality)** at RV University. The report is organized according to academic criteria, presenting foundational theory, complete mathematical proofs, system architectures, and empirical performance verifications.
+This report presents the complete academic and engineering specification for **AutoVR**, an industrial automotive design showroom developed for **CS4104 (Computer Graphics & Virtual Reality)** at RV University. The report is organized according to academic criteria, presenting foundational theory, complete mathematical proofs, system architectures, and empirical performance verifications.
 
 ---
 
@@ -206,7 +210,7 @@ In accordance with **Case Study 2**, the automotive manufacturer requires a dist
 ### 4.1 Physically Based Rendering (PBR) and Surface Optics
 Traditional empirical shading models (such as Phong or Blinn-Phong) rely on non-physical approximations that violate the law of conservation of energy. In automotive exterior design, specular reflections are governed by microscopic surface irregularities and thin clearcoat layers.
 
-AutoVerse VR implements the standard **Cook-Torrance Microfacet Reflectance Model**:
+AutoVR implements the standard **Cook-Torrance Microfacet Reflectance Model**:
 
 $$f_r(\mathbf{l}, \mathbf{v}) = k_d f_{\text{Lambert}} + k_s f_{\text{Cook-Torrance}} = k_d \frac{c}{\pi} + k_s \frac{D(\mathbf{h}) \cdot F(\mathbf{v}, \mathbf{h}) \cdot G(\mathbf{l}, \mathbf{v}, \mathbf{h})}{4 (\mathbf{n} \cdot \mathbf{l}) (\mathbf{n} \cdot \mathbf{v})}$$
 
@@ -322,7 +326,7 @@ Real-time GPUs cannot directly rasterize mathematical NURBS equations or implici
 
 #### 5.1.5 Comparative Evaluation: B-Rep vs. CSG in Automotive Engineering
 
-| Evaluation Criteria | Boundary Representation (B-Rep) | Constructive Solid Geometry (CSG) | AutoVerse VR Selection |
+| Evaluation Criteria | Boundary Representation (B-Rep) | Constructive Solid Geometry (CSG) | AutoVR Selection |
 | :--- | :--- | :--- | :--- |
 | **Primary Domain** | Freeform aerodynamic exterior class-A body surfaces (hood, fenders, roof). | Mechanical structural components (engine blocks, hubs, rotors, suspension brackets). | **Hybrid:** B-Rep for car body shells; CSG for wheel rims & brakes. |
 | **Data Representation** | Explicit topological graph ($V, E, F$) with associated NURBS patch equations. | Implicit binary tree containing geometric primitives and Boolean set operators. | Pre-tessellated into indexed triangle strips for Unity URP GPU rendering. |
@@ -444,7 +448,7 @@ If the designer rotates the wheel about the vertical steering kingpin axis ($Y$-
 
 $$\mathbf{R}_y(45^\circ) = \begin{bmatrix} \cos(45^\circ) & 0 & \sin(45^\circ) & 0 \\ 0 & 1 & 0 & 0 \\ -\sin(45^\circ) & 0 & \cos(45^\circ) & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \implies \mathbf{M}_{\text{steer}} = \begin{bmatrix} 1.06066 & 0 & 1.06066 & 0 \\ 0 & 1.50000 & 0 & 0 \\ -1.06066 & 0 & 1.06066 & 50 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
 
-Both variants are implemented in AutoVerse VR's CAD Inspection Suite.
+Both variants are implemented in AutoVR's CAD Inspection Suite.
 
 ---
 
@@ -515,7 +519,7 @@ Automotive assemblies exhibit intense depth complexity ($k \approx 4\text{x}$ to
 #### 5.3.3 Single-Pass Instanced (SPI) Stereo Viewport Rendering
 Traditional stereoscopic rendering utilizes **Multi-Pass Rendering**: the CPU culls, batches, and issues draw calls for the Left Eye, and then repeats the entire cycle for the Right Eye. This doubles CPU draw calls ($2 \times N$), doubling driver overhead.
 
-**AutoVerse VR implements Single-Pass Instanced (SPI) Stereo Rendering:**
+**AutoVR implements Single-Pass Instanced (SPI) Stereo Rendering:**
 1. The CPU traverses the scene graph and issues draw calls once ($N$ batches).
 2. The GPU hardware instancing engine duplicates geometry instances in the vertex shader:
    ```hlsl
@@ -546,7 +550,7 @@ Traditional stereoscopic rendering utilizes **Multi-Pass Rendering**: the CPU cu
  CPU: [ Cull Left ] -> [ Submit Left (1000 Draw Calls) ] -> [ Cull Right ] -> [ Submit Right (1000 Draw Calls) ]
  Total CPU Draw Calls: 2000 | Frame Time: 16.4 ms (FAIL - Drops below 90 FPS)
  
- SINGLE-PASS INSTANCED (AUTOVERSE VR):
+ SINGLE-PASS INSTANCED (AUTOVR):
  CPU: [ Single Cull ] -> [ Submit Instanced Batch (1000 Draw Calls) ]
  GPU: Duplicates Vertices via SV_RenderTargetArrayIndex -> Left/Right Viewports
  Total CPU Draw Calls: 1000 | Frame Time: 8.4 ms (PASS - Solid 90 FPS)
@@ -557,14 +561,14 @@ Traditional stereoscopic rendering utilizes **Multi-Pass Rendering**: the CPU cu
 ## 6. System Design and Architecture
 
 ### 6.1 Architectural System Diagram
-AutoVerse VR follows a layered component architecture separating presentation, interactive state, CAD kinematic solvers, and low-level URP rendering:
+AutoVR follows a layered component architecture separating presentation, interactive state, CAD kinematic solvers, and low-level URP rendering:
 
 ```
 +----------------------------------------------------------------------------------------------------+
-|                                    AUTOVERSE VR SYSTEM ARCHITECTURE                                |
+|                                    AUTOVR SYSTEM ARCHITECTURE                                |
 +----------------------------------------------------------------------------------------------------+
 |                                         PRESENTATION LAYER                                         |
-|  [ AutoVerseShowroomUI ]     [ Top Brand / Vehicle Nav ]     [ Bottom 18-Swatch Palette Dock ]     |
+|  [ AutoVRShowroomUI ]     [ Top Brand / Vehicle Nav ]     [ Bottom 18-Swatch Palette Dock ]     |
 |  [ CAD Matrix Inspect HUD ]  [ VR Telemetry Overlay ]        [ Viewport Preset Action Pills ]      |
 +----------------------------------------------------------------------------------------------------+
                                                   |
@@ -608,9 +612,9 @@ The system manages 8 distinct vehicle topologies with sub-mesh slot mapping:
 ## 7. Performance, Optimization, and Frame Budget Analysis
 
 ### 7.1 Deterministic $90\,\text{FPS}$ ($11.11\,\text{ms}$) Budget Breakdown
-In high-end VR, dropping even a single frame below $90\,\text{FPS}$ breaks optical tracking stability, inducing motion sickness. The budget allocation in AutoVerse VR is:
+In high-end VR, dropping even a single frame below $90\,\text{FPS}$ breaks optical tracking stability, inducing motion sickness. The budget allocation in AutoVR is:
 
-| Pipeline Stage | Theoretical Budget | Measured AutoVerse Time | Status | Engineering Mitigation |
+| Pipeline Stage | Theoretical Budget | Measured AutoVR Time | Status | Engineering Mitigation |
 | :--- | :---: | :---: | :---: | :--- |
 | **CPU Game Logic & Tracking** | $2.50\,\text{ms}$ | $1.20\,\text{ms}$ | **PASS** | Lightweight input polling and transform hierarchy caching. |
 | **CPU Render Thread Submission** | $2.00\,\text{ms}$ | $1.40\,\text{ms}$ | **PASS** | Single-Pass Instanced (SPI) eliminates duplicate eye passes. |
@@ -632,8 +636,8 @@ In high-end VR, dropping even a single frame below $90\,\text{FPS}$ breaks optic
 ### 8.1 Unity 6 High-Fidelity Showroom Visuals
 The application was rendered in **Unity 6 (`6000.6.7f1`)** under the Universal Render Pipeline (URP).
 
-#### Figure 1: AutoVerse VR Hero Studio View (Unity 6 Engine Capture)
-![AutoVerse Studio Hero Shot](output.png)
+#### Figure 1: AutoVR Hero Studio View (Unity 6 Engine Capture)
+![AutoVR Studio Hero Shot](output.png)
 *Figure 1: Authentic Unity 6 in-engine capture showcasing the Sports Coupe in metallic Racing Red on the illuminated halo turntable with polished obsidian reflections, architectural lighting columns, and in-engine CAD VR Studio telemetry HUD.*
 
 ---
@@ -641,8 +645,8 @@ The application was rendered in **Unity 6 (`6000.6.7f1`)** under the Universal R
 ### 8.2 Interactive Turntable Demo & CAD Inspection HUD
 The dynamic $360^\circ$ continuous turntable rotation and real-time lighting response were captured directly from the running Unity scene:
 
-#### Figure 2: Interactive 3D AutoVerse Turntable Demonstration (Unity 6 Engine GIF)
-![AutoVerse Interactive Showroom Demo](demo.gif)
+#### Figure 2: Interactive 3D AutoVR Turntable Demonstration (Unity 6 Engine GIF)
+![AutoVR Interactive Showroom Demo](demo.gif)
 *Figure 2: Animated 30-frame sequence demonstrating continuous $360^\circ$ orbital turntable rotation, real-time specular highlights on metallic automotive clearcoat, and dual-site CAD sync telemetry.*
 
 ---
@@ -666,7 +670,7 @@ The dynamic $360^\circ$ continuous turntable rotation and real-time lighting res
 
 ## 10. Conclusion
 
-The **AutoVerse VR** project successfully delivers an enterprise-grade collaborative virtual automotive design environment satisfying all theoretical, numerical, and practical criteria of **CS4104 Case Study 2 (Industrial Design & Architecture)**:
+The **AutoVR** project successfully delivers an enterprise-grade collaborative virtual automotive design environment satisfying all theoretical, numerical, and practical criteria of **CS4104 Case Study 2 (Industrial Design & Architecture)**:
 1. **Geometric Modeling (Question 1):** We analyzed and formalized the end-to-end transformation of 2D CAD blueprint splines into 3D meshes using Boundary Representation (B-Rep) topological graphs verified by the Euler-Poincaré formula ($V - E + F = 2(S - G) + H$) and Constructive Solid Geometry (CSG) Boolean set operations.
 2. **Matrix Transformations (Question 2):** We formulated, multiplied, and verified the complete $4 \times 4$ composite transformation matrix in homogeneous coordinates for a car wheel rim scaled by 1.5, rotated by $45^\circ$, and moved forward by $50\,\text{mm}$ under column-vector convention:
    $$\mathbf{M}_{\text{composite}} = \begin{bmatrix} 1.06066 & -1.06066 & 0 & 0 \\ 1.06066 & 1.06066 & 0 & 0 \\ 0 & 0 & 1.50000 & 50 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$

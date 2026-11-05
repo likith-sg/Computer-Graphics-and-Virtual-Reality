@@ -3,15 +3,15 @@ import subprocess
 import sys
 
 unity_exe = r"C:\Program Files\Unity\Hub\Editor\6000.6.7f1\Editor\Unity.exe"
-project_path = os.path.abspath("Case Study/AutoVerse")
-log_file = os.path.abspath("Case Study/AutoVerse/unity_capture.log")
+project_path = os.path.abspath("Case Study/AutoVR")
+log_file = os.path.abspath("Case Study/AutoVR/unity_capture.log")
 
 cmd = [
     unity_exe,
     "-quit",
     "-batchmode",
     "-projectPath", project_path,
-    "-executeMethod", "CaptureAutoVerseUnityOutputs.RunCapture",
+    "-executeMethod", "CaptureAutoVRUnityOutputs.RunCapture",
     "-logFile", log_file
 ]
 

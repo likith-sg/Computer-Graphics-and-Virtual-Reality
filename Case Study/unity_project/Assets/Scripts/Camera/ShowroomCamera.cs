@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// AutoVerse - ShowroomCamera
+/// AutoVR - ShowroomCamera
 /// Smooth orbital camera controller with preset transitions, auto-rotation turntable,
 /// pinch zoom, and strict UI interaction isolation with drag-threshold deadzones.
 /// Correctly aligned with vehicle heading: Front View faces headlights, Rear View faces spoiler.
@@ -329,13 +329,13 @@ public class ShowroomCamera : MonoBehaviour
     /// </summary>
     private bool IsPointerOverUI()
     {
-        if (AutoVerseShowroomUI.Instance != null) return AutoVerseShowroomUI.Instance.IsPointerOverUI();
+        if (AutoVRShowroomUI.Instance != null) return AutoVRShowroomUI.Instance.IsPointerOverUI();
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
     private bool IsTouchOverUI(int fingerId)
     {
-        if (AutoVerseShowroomUI.Instance != null) return AutoVerseShowroomUI.Instance.IsTouchOverUI(fingerId);
+        if (AutoVRShowroomUI.Instance != null) return AutoVRShowroomUI.Instance.IsTouchOverUI(fingerId);
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(fingerId);
     }
 

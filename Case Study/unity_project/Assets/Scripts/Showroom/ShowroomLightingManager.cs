@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 /// <summary>
-/// AutoVerse - ShowroomLightingManager
+/// AutoVR - ShowroomLightingManager
 /// Controls studio key, fill, rim, and softbox lights across 4 luxury automotive presets.
 /// Automatically eliminates legacy tripod meshes, floor spoke sticks, and template spotlight fixtures.
 /// Guarantees bright, high-contrast, professional 360-degree vehicle illumination.
@@ -157,7 +157,7 @@ public class ShowroomLightingManager : MonoBehaviour
             Destroy(rigRoot.gameObject);
         }
 
-        GameObject rig = new GameObject("AutoVerse_Studio_Lighting_Rig");
+        GameObject rig = new GameObject("AutoVR_Studio_Lighting_Rig");
         rig.transform.SetParent(transform, false);
         rigRoot = rig.transform;
 

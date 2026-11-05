@@ -49,7 +49,7 @@ public class VehicleAccessoryManager : MonoBehaviour
     {
         if (accessoryRoot == null)
         {
-            accessoryRoot = new GameObject("[AutoVerse_Accessories]");
+            accessoryRoot = new GameObject("[AutoVR_Accessories]");
             accessoryRoot.transform.SetParent(transform, false);
         }
     }
@@ -125,7 +125,7 @@ public class VehicleAccessoryManager : MonoBehaviour
             accessoryStates[i] = false;
         }
         UpdateVisibility();
-        Debug.Log("AutoVerse: Accessories reset.");
+        Debug.Log("AutoVR: Accessories reset.");
     }
 
     public void ResetAllAccessories() => ResetAccessories();

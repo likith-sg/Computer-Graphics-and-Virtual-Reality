@@ -452,9 +452,9 @@ python experiments/Experiment_10/exp10.py
 
 ---
 
-## Case Study 2: Automotive Design & Manufacturing — AutoVerse 3D Showroom
+## Case Study 2: Automotive Design & Manufacturing — AutoVR 3D Showroom
 
-**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Interactive Program:** [`Case Study/autoverse.py`](Case%20Study/autoverse.py) &bull; **Unity Project:** [`Case Study/AutoVerse/`](Case Study/AutoVerse/) &bull; **Live WebGL:** [auto-verse-plum.vercel.app](https://auto-verse-plum.vercel.app/)
+**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Interactive Program:** [`Case Study/autovr.py`](Case%20Study/autovr.py) &bull; **Unity Project:** [`Case Study/AutoVR/`](Case Study/AutoVR/) &bull; **Live WebGL:** [auto-verse-plum.vercel.app](https://auto-verse-plum.vercel.app/)
 
 ### Scenario: Automotive Design and Manufacturing
 An automotive company develops a collaborative real-time 3D Virtual Reality showroom and vehicle customizer to review new vehicle models with engineering and design teams located across the world (e.g., Bengaluru to Detroit sync).
@@ -470,7 +470,7 @@ An automotive company develops a collaborative real-time 3D Virtual Reality show
    - **6 Underglow Neon Colors**: Electric Cyan, Neon Magenta, Acid Green, Amber Gold, Ice White, Royal Violet with real-time ground reflection.
    - **Procedural Bounds-Fitted Accessories**: Roof light bars, aerodynamic downforce rear wings, dual racing stripes, and underglow tubes.
 3. **360° Architectural Luxury Showroom:**
-   - Seamless polished obsidian reflective floor, illuminated turntable with dual ambient LED halo rings, acoustic presentation wall with backlit 3D **AUTOVERSE** emblem, vertical light columns, and overhead studio softbox canopy.
+   - Seamless polished obsidian reflective floor, illuminated turntable with dual ambient LED halo rings, acoustic presentation wall with backlit 3D **AUTOVR** emblem, vertical light columns, and overhead studio softbox canopy.
    - **4 Studio Lighting Presets**: Luxury Studio (warm champagne & tungsten), Midnight Studio (ice blue & cyan rim), Bright Gallery (pure daylight white), and Neon Garage (cyberpunk magenta & electric cyan).
 4. **Touch & Orbit Camera Interaction:**
    - 360° mouse drag orbit, pinch-to-zoom, auto-spin turntable (15°/s), and complete interaction isolation preventing camera jumps while interacting with UI.
@@ -480,20 +480,20 @@ An automotive company develops a collaborative real-time 3D Virtual Reality show
    - Strict $< 11.1\,\text{ms}$ ($90\,\text{Hz}$) VR frame budget and Single-Pass Instanced (SPI) viewport optimization.
 
 ### Execution Command
-Run the standalone interactive 3D AutoVerse studio viewer:
+Run the standalone interactive 3D AutoVR studio viewer:
 ```bash
-python "Case Study/autoverse.py"
+python "Case Study/autovr.py"
 ```
 
-To run in Unity 6 Editor, open `Case Study/AutoVerse` (or `Case Study/unity_project`) and load `Assets/Scenes/AutoVerse_Showwroom.unity`.
+To run in Unity 6 Editor, open `Case Study/AutoVR` (or `Case Study/unity_project`) and load `Assets/Scenes/AutoVR_Showwroom.unity`.
 
 ### Visual Result
 
-#### AutoVerse 3D Showroom (Hero Static View)
-<img src="Case Study/output.png" alt="AutoVerse 3D Showroom Hero Static View" width="700">
+#### AutoVR 3D Showroom (Hero Static View)
+<img src="Case Study/output.png" alt="AutoVR 3D Showroom Hero Static View" width="700">
 
-#### Interactive 3D AutoVerse Turntable Demo (GIF)
-<img src="Case Study/demo.gif" alt="AutoVerse Interactive 3D Turntable Demo" width="650">
+#### Interactive 3D AutoVR Turntable Demo (GIF)
+<img src="Case Study/demo.gif" alt="AutoVR Interactive 3D Turntable Demo" width="650">
 
 *Demonstrates the 3D automotive showroom: Sports Coupe in metallic Racing Red on the illuminated halo turntable with polished obsidian reflections, studio lighting presets, and 360° camera orbit.*
 

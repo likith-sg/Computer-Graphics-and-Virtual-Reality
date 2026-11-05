@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// AutoVerse - ShowroomEnvironmentManager
+/// AutoVR - ShowroomEnvironmentManager
 /// Builds a luxury 360-degree automotive architectural showroom.
 /// Features a polished obsidian reflective floor, ambient LED halo turntable,
-/// modern architectural feature walls with backlit 3D AutoVerse emblem,
+/// modern architectural feature walls with backlit 3D AutoVR emblem,
 /// illuminated vertical light columns, showcase window bays, and overhead studio softbox canopy.
 /// Automatically eliminates template floor spoke lights, tripods, and legacy dark void meshes.
 /// </summary>
@@ -145,7 +145,7 @@ public class ShowroomEnvironmentManager : MonoBehaviour
             Destroy(environmentRoot);
         }
 
-        environmentRoot = new GameObject("[AutoVerse_Luxury_Showroom]");
+        environmentRoot = new GameObject("[AutoVR_Luxury_Showroom]");
         environmentRoot.transform.SetParent(transform, false);
 
         foreach (Material material in decorMaterials)
@@ -293,25 +293,25 @@ public class ShowroomEnvironmentManager : MonoBehaviour
                 new Vector3(0.16f, roomHeight - 0.65f, 0.23f), timberMat);
         CreateWallDetail(backWall.transform, "Stone_Feature_Plinth", new Vector3(0, 0.65f, z - 0.35f), new Vector3(12, 0.9f, 0.3f), stoneMat);
 
-        // Backlit AUTOVERSE 3D Brand Logo Bar on Feature Wall
+        // Backlit AutoVR 3D Brand Logo Bar on Feature Wall
         BuildBrandLogoLettering(backWall.transform, new Vector3(0f, 4.4f, z - 0.35f));
     }
 
     private void BuildBrandLogoLettering(Transform parent, Vector3 centerPos)
     {
-        GameObject logoRoot = new GameObject("AUTOVERSE_Brand_Emblem");
+        GameObject logoRoot = new GameObject("AutoVR_Brand_Emblem");
         logoRoot.transform.SetParent(parent, false);
         logoRoot.transform.position = centerPos;
 
         CreateWallDetail(logoRoot.transform, "Brand_Plaque", Vector3.zero, new Vector3(11.8f, 1.8f, 0.12f), revealMat);
-        var lettering = new GameObject("AUTOVERSE_Lettering", typeof(TextMesh));
+        var lettering = new GameObject("AutoVR_Lettering", typeof(TextMesh));
         lettering.transform.SetParent(logoRoot.transform, false);
         lettering.transform.localPosition = new Vector3(0, 0.14f, -0.08f);
         Font brandFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
         TextMesh text = lettering.GetComponent<TextMesh>();
         text.font = brandFont;
         if (brandFont != null) lettering.GetComponent<MeshRenderer>().sharedMaterial = brandFont.material;
-        text.text = "R V U   A U T O V E R S E";
+        text.text = "A u t o V R";
         text.anchor = TextAnchor.MiddleCenter;
         text.alignment = TextAlignment.Center;
         text.fontSize = 96;

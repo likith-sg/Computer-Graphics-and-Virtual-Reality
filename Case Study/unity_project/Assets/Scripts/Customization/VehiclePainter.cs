@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// AutoVerse - VehiclePainter
+/// AutoVR - VehiclePainter
 /// Manages body paint customization (18 colors, 4 finishes), wheel colors, caliper colors,
 /// window tints, headlight styles, and accessory toggles across all showroom vehicles.
 /// Uses Universal Render Pipeline Lit properties with standard fallback.
@@ -336,9 +336,9 @@ public class VehiclePainter : MonoBehaviour
             gameObject.AddComponent<ShowroomEnvironmentManager>();
         }
 
-        if (GetComponent<AutoVerseShowroomUI>() == null && FindAnyObjectByType<AutoVerseShowroomUI>() == null)
+        if (GetComponent<AutoVRShowroomUI>() == null && FindAnyObjectByType<AutoVRShowroomUI>() == null)
         {
-            gameObject.AddComponent<AutoVerseShowroomUI>();
+            gameObject.AddComponent<AutoVRShowroomUI>();
         }
 
         SetupCurrentCar();
