@@ -1,0 +1,92 @@
+{
+  "project": "Virtual Interior Design Studio",
+  "author": "Likith S G",
+  "usn": "1RVU23CSE236",
+  "lighting_preset": 0,
+  "items": [
+    {
+      "id": "chair_velvet",
+      "name": "Nordic Velvet Armchair",
+      "category": "Seating",
+      "pos": [
+        -1.45,
+        0.0,
+        -0.45
+      ],
+      "rot_y": 42.0,
+      "scale": 1.0,
+      "mat_idx": 0,
+      "poly_count": 1840
+    },
+    {
+      "id": "sofa_leather",
+      "name": "Stockholm 3-Seater Leather Sofa",
+      "category": "Seating",
+      "pos": [
+        0.0,
+        0.0,
+        1.2
+      ],
+      "rot_y": 180.0,
+      "scale": 1.0,
+      "mat_idx": 2,
+      "poly_count": 2450
+    },
+    {
+      "id": "table_coffee",
+      "name": "Oslo Oak Coffee Table",
+      "category": "Tables",
+      "pos": [
+        0.0,
+        0.0,
+        0.25
+      ],
+      "rot_y": 0.0,
+      "scale": 1.0,
+      "mat_idx": 4,
+      "poly_count": 920
+    },
+    {
+      "id": "table_side",
+      "name": "Bergen Pedestal Side Table",
+      "category": "Tables",
+      "pos": [
+        -2.25,
+        0.0,
+        -0.35
+      ],
+      "rot_y": 0.0,
+      "scale": 1.0,
+      "mat_idx": 6,
+      "poly_count": 640
+    },
+    {
+      "id": "lamp_floor",
+      "name": "Kobenhavn Arc Floor Lamp",
+      "category": "Lighting",
+      "pos": [
+        1.75,
+        0.0,
+        1.45
+      ],
+      "rot_y": -125.0,
+      "scale": 1.0,
+      "mat_idx": 5,
+      "poly_count": 1120
+    },
+    {
+      "id": "decor_plant",
+      "name": "Monstera in Planter",
+      "category": "Decor",
+      "pos": [
+        2.65,
+        0.0,
+        -1.85
+      ],
+      "rot_y": 15.0,
+      "scale": 1.0,
+      "mat_idx": 5,
+      "poly_count": 1450
+    }
+  ]
+}
