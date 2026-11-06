@@ -452,50 +452,36 @@ python experiments/Experiment_10/exp10.py
 
 ---
 
-## Case Study 2: Automotive Design & Manufacturing — AutoVR 3D Showroom
+## Case Study 3: Retail and Remote Commerce
 
-**Location:** [`Case Study/`](Case Study/) &bull; **Documentation:** [`Case Study/README.md`](Case Study/README.md) &bull; **Interactive Program:** [`Case Study/autovr.py`](Case%20Study/autovr.py) &bull; **Unity Project:** [`Case Study/AutoVR/`](Case Study/AutoVR/) &bull; **Live WebGL:** [auto-verse-plum.vercel.app](https://auto-verse-plum.vercel.app/)
+**Location:** [`Case Study 3/`](Case%20Study%203/) &bull; **Documentation:** [`Case Study 3/README.md`](Case%20Study%203/README.md) &bull; **Interactive Program:** [`Case Study 3/interior_studio.py`](Case%20Study%203/interior_studio.py) &bull; **Unity Project:** [`Case Study 3/UnityProject/`](Case%20Study%203/UnityProject/) &bull; **Report:** [DOCX](Case%20Study%203/Report/CS4104_Case_Study_3.docx) | [PDF](Case%20Study%203/Report/CS4104_Case_Study_3.pdf)
 
-### Scenario: Automotive Design and Manufacturing
-An automotive company develops a collaborative real-time 3D Virtual Reality showroom and vehicle customizer to review new vehicle models with engineering and design teams located across the world (e.g., Bengaluru to Detroit sync).
+### Scenario: Retail and Remote Commerce (Virtual Interior Design Studio)
+An interior design startup developing an interactive WebXR-ready 3D application allowing customers to place, inspect, and customize furniture in a photorealistic Scandinavian living room.
 
-### Key Features & Technical Deliverables:
-1. **8 Interactive Vehicle Models:**
-   - Real-time switching between `Sports Coupe`, `Executive Sedan`, `Compact Hatch`, `Urban SUV`, `GT Formula Racer`, `Police Interceptor`, `City Taxi`, and `Luxury Golf Cart`.
-2. **Deep Multi-Layer Customization Suite:**
-   - **18 Automotive Colors**: Pearl White, Midnight Black, Graphite, Arctic Silver, Racing Red, Crimson, Sunset Orange, Solar Yellow, Royal Blue, Sky Blue, Emerald Green, Forest Green, Violet, Rose Gold, Champagne, Bronze, Teal, Candy Pink.
-   - **4 Surface Finishes**: Gloss (high smoothness $0.90$, sharp specular), Metallic (high metallic $0.90$, micro-roughness $0.85$), Matte (diffuse absorption, zero metallic), and Satin (velvety semi-specular $0.50$).
-   - **5 Alloy Finishes & 5 Brembo Calipers**: Stealth Black, Polished Silver, Gunmetal, Liquid Gold, Burnt Bronze, and Racing Red calipers.
-   - **6 Window Tints & 5 Headlight Styles**: Clear Glass ($35\%$), Light Smoke ($55\%$), Dark Charcoal ($82\%$), Limo Blackout ($96\%$), Sunset Gold Chameleon, Cyber Blue Mirror, and Xenon/LED headlights.
-   - **6 Underglow Neon Colors**: Electric Cyan, Neon Magenta, Acid Green, Amber Gold, Ice White, Royal Violet with real-time ground reflection.
-   - **Procedural Bounds-Fitted Accessories**: Roof light bars, aerodynamic downforce rear wings, dual racing stripes, and underglow tubes.
-3. **360° Architectural Luxury Showroom:**
-   - Seamless polished obsidian reflective floor, illuminated turntable with dual ambient LED halo rings, acoustic presentation wall with backlit 3D **AUTOVR** emblem, vertical light columns, and overhead studio softbox canopy.
-   - **4 Studio Lighting Presets**: Luxury Studio (warm champagne & tungsten), Midnight Studio (ice blue & cyan rim), Bright Gallery (pure daylight white), and Neon Garage (cyberpunk magenta & electric cyan).
-4. **Touch & Orbit Camera Interaction:**
-   - 360° mouse drag orbit, pinch-to-zoom, auto-spin turntable (15°/s), and complete interaction isolation preventing camera jumps while interacting with UI.
-5. **Automotive Engineering Formulations:**
-   - $4 \times 4$ Homogeneous Transformation Matrices for multi-location CAD sync and exploded assembly views.
-   - Cook-Torrance microfacet BRDF with GGX normal distribution and Schlick-Fresnel grazing clearcoat reflection.
-   - Strict $< 11.1\,\text{ms}$ ($90\,\text{Hz}$) VR frame budget and Single-Pass Instanced (SPI) viewport optimization.
+### Key Computer Graphics Concepts
+1. **Illumination and Colour Models (Question 1):** Multi-component Phong ($I = k_a I_a + k_d I_l(\mathbf{N}\cdot\mathbf{L}) + k_s I_l(\mathbf{R}\cdot\mathbf{V})^n$) and Microfacet PBR, investigating optical retro-reflection, cut-pile fiber light trapping, and grazing-angle sheen on a virtual Red Velvet Armchair across Morning Sunlight, Cozy Evening, and Studio Daylight presets.
+2. **Texture and Bump/Normal Mapping (Question 2):** Tangent-space normal mapping ($\mathbf{N}_{\text{world}} = \mathbf{M}_{\text{TBN}} \cdot \mathbf{n}_{\text{tangent}}$) on a 3-seater Stockholm Leather Sofa, achieving rich pebble grain, creases, and stitching detail with 2,450 triangles instead of 520,000 (99.5% polygon budget reduction).
+3. **User Interaction & Coordinate Transforms (Question 3):** Window-to-viewport linear coordinate mapping, Normalized Device Coordinates (NDC), and unprojected camera ray generation ($\mathbf{P}(t) = \mathbf{O} + t\mathbf{D}$) intersecting the floor plane ($Y = 0$) at $t = -O_y / D_y$ for planar translation, axial rotation, and scaling.
+4. **Layout Persistence:** Full JSON room state serialization and restoration (`room_layout.json`).
 
 ### Execution Command
-Run the standalone interactive 3D AutoVR studio viewer:
+Run the standalone interactive 3D Virtual Interior Design Studio:
 ```bash
-python "Case Study/autovr.py"
+python "Case Study 3/interior_studio.py"
 ```
 
-To run in Unity 6 Editor, open `Case Study/AutoVR` (or `Case Study/unity_project`) and load `Assets/Scenes/AutoVR_Showwroom.unity`.
+To run in Unity 6 Editor, open `Case Study 3/UnityProject/` and load `Assets/Scenes/InteriorStudio.unity`.
 
 ### Visual Result
 
-#### AutoVR 3D Showroom (Hero Static View)
-<img src="Case Study/output.png" alt="AutoVR 3D Showroom Hero Static View" width="700">
+#### Virtual Interior Design Studio (Hero Static View)
+<img src="Case Study 3/output.png" alt="Virtual Interior Design Studio Hero View" width="700">
 
-#### Interactive 3D AutoVR Turntable Demo (GIF)
-<img src="Case Study/demo.gif" alt="AutoVR Interactive 3D Turntable Demo" width="650">
+#### Interactive 3D Turntable Demo (GIF)
+<img src="Case Study 3/demo.gif" alt="Virtual Interior Design Studio 360 Turntable Demo" width="650">
 
-*Demonstrates the 3D automotive showroom: Sports Coupe in metallic Racing Red on the illuminated halo turntable with polished obsidian reflections, studio lighting presets, and 360° camera orbit.*
+*Demonstrates the Scandinavian living room: Nordic Velvet Armchair in morning sunlight with grazing sheen, Stockholm Leather Sofa with normal-mapped creases, Oslo Oak Coffee Table, Kobenhavn Floor Lamp, and interactive selection HUD.*
 
 ---
 
@@ -635,16 +621,17 @@ Computer-Graphics-and-Virtual-Reality/
 │       ├── demo.gif
 │       └── README.md
 │
-├── Case Study/
+├── Case Study 3/
 │   ├── README.md
-│   ├── verify_viewport.py
-│   └── unity_project/
-│       ├── Assets/
-│       │   ├── Scripts/
-│       │   ├── Editor/
-│       │   └── Scenes/
-│       ├── Packages/
-│       └── ProjectSettings/
+│   ├── interior_studio.py
+│   ├── demo.gif
+│   ├── output.png
+│   ├── UnityProject/
+│   ├── Report/
+│   │   ├── CS4104_Case_Study_3.docx
+│   │   └── CS4104_Case_Study_3.pdf
+│   ├── Screenshots/
+│   └── Documentation/
 │
 ├── assets/
 │   ├── screenshots/
